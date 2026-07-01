@@ -1,136 +1,363 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* =====================================
+   知行研途 官网
+   Style.css
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#F7F5EF;
-color:#333;
-}
 
-.hero{
+    font-family:
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
 
-height:100vh;
+    background:#f8f7f2;
 
-background:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80");
+    color:#2f3b2f;
 
-background-size:cover;
-background-position:center;
+    line-height:1.8;
 
-position:relative;
+    overflow-x:hidden;
 
 }
 
-.hero::before{
+img{
 
-content:"";
+    width:100%;
 
-position:absolute;
-
-left:0;
-top:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,.35);
+    display:block;
 
 }
 
-nav{
+a{
 
-position:absolute;
+    text-decoration:none;
 
-top:0;
-
-left:0;
-
-width:100%;
-
-padding:30px 80px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-z-index:10;
-
-color:white;
-
-}
-
-.logo h2{
-
-font-size:30px;
-
-}
-
-.logo p{
-
-opacity:.8;
+    color:inherit;
 
 }
 
 ul{
 
-display:flex;
+    list-style:none;
 
-gap:35px;
+}
 
-list-style:none;
+section{
+
+    padding:110px 8%;
+
+}
+
+/* ==========================
+      Header
+========================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:82px;
+
+    padding:0 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    z-index:999;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.25);
+
+    transition:.4s;
+
+}
+
+header.scrolled{
+
+    background:#ffffff;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+/* Logo */
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#214c36;
+
+    letter-spacing:4px;
+
+}
+
+/* Nav */
+
+nav ul{
+
+    display:flex;
+
+    gap:45px;
+
+}
+
+nav a{
+
+    position:relative;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#2e8b57;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-8px;
+
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:#2e8b57;
+
+    transition:.3s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+/* =====================
+Button
+===================== */
+
+.btn,
+
+.primary,
+
+.secondary{
+
+    padding:14px 36px;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    display:inline-block;
+
+}
+
+.primary{
+
+    background:#2e8b57;
+
+    color:#fff;
+
+}
+
+.primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.18);
+
+}
+
+.secondary{
+
+    border:2px solid #fff;
+
+    color:#fff;
+
+}
+
+.secondary:hover{
+
+    background:#fff;
+
+    color:#214c36;
+
+}
+
+/* ======================
+Hero
+====================== */
+
+.hero{
+
+    height:100vh;
+
+    background:url("../images/hero/banner.jpg")
+    center center/cover;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.45)
+    );
 
 }
 
 .hero-content{
 
-position:absolute;
+    position:relative;
 
-left:10%;
+    z-index:10;
 
-top:50%;
+    color:#fff;
 
-transform:translateY(-50%);
-
-z-index:10;
-
-color:white;
+    text-align:center;
 
 }
 
-.hero-content h1{
+.hero h1{
 
-font-size:68px;
+    font-size:88px;
 
-max-width:700px;
+    letter-spacing:14px;
 
-margin-bottom:20px;
+    margin-bottom:18px;
 
-}
-
-.hero-content p{
-
-font-size:24px;
-
-margin-bottom:40px;
+    font-weight:700;
 
 }
 
-.hero-content a{
+.hero h2{
 
-display:inline-block;
+    font-size:22px;
 
-padding:16px 40px;
+    letter-spacing:8px;
 
-background:#355A4B;
+    margin-bottom:30px;
 
-color:white;
+    font-weight:300;
 
-text-decoration:none;
+}
 
-border-radius:50px;
+.hero p{
+
+    width:680px;
+
+    max-width:90%;
+
+    margin:auto;
+
+    font-size:18px;
+
+    opacity:.95;
+
+}
+
+.buttons{
+
+    margin-top:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+/* Scroll Indicator */
+
+.scroll{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#fff;
+
+    animation:move 2s infinite;
+
+}
+
+@keyframes move{
+
+    0%{
+
+        transform:
+        translate(-50%,0);
+
+    }
+
+    50%{
+
+        transform:
+        translate(-50%,15px);
+
+    }
+
+    100%{
+
+        transform:
+        translate(-50%,0);
+
+    }
 
 }
